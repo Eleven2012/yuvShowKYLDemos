@@ -6,8 +6,8 @@
 //  Copyright © 2019 yulu kong. All rights reserved.
 //
 
-#ifndef __GLRENDER_H_
-#define __GLRENDER_H_
+#ifndef __KYLGLRENDER_H_
+#define __KYLGLRENDER_H_
 
 
 #import <Foundation/Foundation.h>
