@@ -94,9 +94,9 @@ public:
      重置队列，释放工作队列和空闲队列资源
 
      @param workQueue 工作队列指针 KYLCustomQueue
-     @param FreeQueue 空闲队列指针 KYLCustomQueue
+     @param freeQueue 空闲队列指针 KYLCustomQueue
      */
-    void ResetFreeQueue(KYLCustomQueue *workQueue, KYLCustomQueue *FreeQueue);
+    void ResetFreeQueue(KYLCustomQueue *workQueue, KYLCustomQueue *freeQueue);
     
 private:
 

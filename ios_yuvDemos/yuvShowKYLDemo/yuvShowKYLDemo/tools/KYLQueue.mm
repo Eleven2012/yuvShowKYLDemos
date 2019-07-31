@@ -29,6 +29,7 @@ const static char *kModuleName = "KYLQueueProcess";
 
 #pragma mark - Init
 
+//构造函数
 KYLQueue::KYLQueue(){
     m_free_queue = (KYLCustomQueue *)malloc(sizeof(struct KYLCustomQueue));
     m_work_queue = (KYLCustomQueue *)malloc(sizeof(struct KYLCustomQueue));
@@ -50,6 +51,13 @@ KYLQueue::KYLQueue(){
     log4cplus_info(kModuleName, "%s: Init finish !",__func__);
 }
 
+/**
+ 初始化队列
+ 
+ @param queue 队列指针 KYLCustomQueue
+ @param type 队列类型 KYLCustomQueueType
+ */
+
 void KYLQueue::InitQueue(KYLCustomQueue *queue, KYLCustomQueueType type) {
     if (queue != NULL) {
         queue->type  = type;
@@ -60,6 +68,13 @@ void KYLQueue::InitQueue(KYLCustomQueue *queue, KYLCustomQueueType type) {
 }
 
 #pragma mark - Main Operation
+
+/**
+ 入队
+ 
+ @param queue 队列指针 KYLCustomQueue
+ @param node 队列类型 KYLCustomQueueType
+ */
 void KYLQueue::EnQueue(KYLCustomQueue *queue, KYLCustomQueueNode *node) {
     if (queue == NULL) {
         log4cplus_debug(kModuleName, "%s: current queue is NULL",__func__);
@@ -67,7 +82,7 @@ void KYLQueue::EnQueue(KYLCustomQueue *queue, KYLCustomQueueNode *node) {
     }
     
     if (node==NULL) {
-        log4cplus_debug(kModuleName, "%s: current node is NUL",__func__);
+        log4cplus_debug(kModuleName, "%s: current node is NULL",__func__);
         return;
     }
     
@@ -113,6 +128,12 @@ void KYLQueue::EnQueue(KYLCustomQueue *queue, KYLCustomQueueNode *node) {
     }
 }
 
+/**
+ 出队
+ 
+ @param queue 队列指针 KYLCustomQueue
+ @return 出队的节点指针 KYLCustomQueueNode
+ */
 KYLCustomQueueNode* KYLQueue::DeQueue(KYLCustomQueue *queue) {
     if (queue == NULL) {
         log4cplus_debug(kModuleName, "%s: current queue is NULL",__func__);
@@ -139,6 +160,12 @@ KYLCustomQueueNode* KYLQueue::DeQueue(KYLCustomQueue *queue) {
     return element;
 }
 
+/**
+ 重置队列，释放工作队列和空闲队列资源
+ 
+ @param workQueue 工作队列指针 KYLCustomQueue
+ @param freeQueue 空闲队列指针 KYLCustomQueue
+ */
 void KYLQueue::ResetFreeQueue(KYLCustomQueue *workQueue, KYLCustomQueue *freeQueue) {
     if (workQueue == NULL) {
         log4cplus_debug(kModuleName, "%s: The WorkQueue is NULL",__func__);
@@ -162,6 +189,11 @@ void KYLQueue::ResetFreeQueue(KYLCustomQueue *workQueue, KYLCustomQueue *freeQue
     log4cplus_info(kModuleName, "%s: ResetFreeQueue : The work queue size is %d, free queue size is %d",__func__,workQueue->size, freeQueue->size);
 }
 
+/**
+ 清空队列
+ 
+ @param queue 队列指针KYLCustomQueue
+ */
 void KYLQueue::ClearKYLCustomQueue(KYLCustomQueue *queue) {
     while (queue->size) {
         KYLCustomQueueNode *node = this->DeQueue(queue);
@@ -171,6 +203,11 @@ void KYLQueue::ClearKYLCustomQueue(KYLCustomQueue *queue) {
     log4cplus_info(kModuleName, "%s: Clear KYLQueue queue",__func__);
 }
 
+/**
+ 释放节点
+ 
+ @param node 节点指针KYLCustomQueueNode
+ */
 void KYLQueue::FreeNode(KYLCustomQueueNode* node) {
     if(node != NULL){
         free(node->data);
