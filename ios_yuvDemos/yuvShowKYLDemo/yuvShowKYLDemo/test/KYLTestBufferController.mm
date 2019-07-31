@@ -17,7 +17,7 @@
 #define currentResolutionW 1920
 #define currentResolutionH 1080
 #define currentResolution AVCaptureSessionPreset1920x1080
-const static char *kModuleName = "MainVC";
+const static char *kModuleName = "KYLTestBufferController";
 
 @interface KYLTestBufferController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 {
