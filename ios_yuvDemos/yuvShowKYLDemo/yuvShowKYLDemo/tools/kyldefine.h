@@ -10,6 +10,8 @@
 #define kyldefine_h
 
 #define IS_IPAD UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
 typedef enum : NSUInteger {
     KYLPixelBufferTypeNone = 0,

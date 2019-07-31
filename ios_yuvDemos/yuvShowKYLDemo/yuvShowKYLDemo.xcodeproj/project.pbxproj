@@ -31,6 +31,8 @@
 		A59567F522EBDB2F004A3E62 /* KYLPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = A59567F422EBDB2F004A3E62 /* KYLPreviewView.m */; };
 		A59567FB22EBE09D004A3E62 /* KYLCameraHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A59567FA22EBE09D004A3E62 /* KYLCameraHandler.m */; };
 		A59567FE22EBE0B5004A3E62 /* KYLCameraModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A59567FD22EBE0B5004A3E62 /* KYLCameraModel.m */; };
+		A595680122F128D9004A3E62 /* KYLQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = A595680022F128D9004A3E62 /* KYLQueue.mm */; };
+		A595680522F12EA0004A3E62 /* KYLTestBufferController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A595680422F12EA0004A3E62 /* KYLTestBufferController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,10 @@
 		A59567FA22EBE09D004A3E62 /* KYLCameraHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYLCameraHandler.m; sourceTree = "<group>"; };
 		A59567FC22EBE0B5004A3E62 /* KYLCameraModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYLCameraModel.h; sourceTree = "<group>"; };
 		A59567FD22EBE0B5004A3E62 /* KYLCameraModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYLCameraModel.m; sourceTree = "<group>"; };
+		A59567FF22F128D9004A3E62 /* KYLQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYLQueue.h; sourceTree = "<group>"; };
+		A595680022F128D9004A3E62 /* KYLQueue.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = KYLQueue.mm; sourceTree = "<group>"; };
+		A595680322F12EA0004A3E62 /* KYLTestBufferController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYLTestBufferController.h; sourceTree = "<group>"; };
+		A595680422F12EA0004A3E62 /* KYLTestBufferController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = KYLTestBufferController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 		A595679C22EBC9D0004A3E62 /* yuvShowKYLDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A595680222F12A59004A3E62 /* test */,
 				A59567E622EBD0FF004A3E62 /* tools */,
 				A59567DD22EBCEB1004A3E62 /* video */,
 				A59567DC22EBCEA2004A3E62 /* audio */,
@@ -228,6 +235,8 @@
 				A59567E722EBD163004A3E62 /* KYLCircleBuf.h */,
 				A59567E822EBD163004A3E62 /* KYLCircleBuf.mm */,
 				A59567F722EBDD6A004A3E62 /* kyldefine.h */,
+				A59567FF22F128D9004A3E62 /* KYLQueue.h */,
+				A595680022F128D9004A3E62 /* KYLQueue.mm */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -247,6 +256,15 @@
 				A59567FD22EBE0B5004A3E62 /* KYLCameraModel.m */,
 			);
 			path = yuvplayer;
+			sourceTree = "<group>";
+		};
+		A595680222F12A59004A3E62 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				A595680322F12EA0004A3E62 /* KYLTestBufferController.h */,
+				A595680422F12EA0004A3E62 /* KYLTestBufferController.mm */,
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,8 +408,10 @@
 				A59567F522EBDB2F004A3E62 /* KYLPreviewView.m in Sources */,
 				A59567A022EBC9D0004A3E62 /* ViewController.swift in Sources */,
 				A59567E922EBD163004A3E62 /* KYLCircleBuf.mm in Sources */,
+				A595680122F128D9004A3E62 /* KYLQueue.mm in Sources */,
 				A595679E22EBC9D0004A3E62 /* AppDelegate.swift in Sources */,
 				A59567CF22EBCA94004A3E62 /* KYLGLRender.mm in Sources */,
+				A595680522F12EA0004A3E62 /* KYLTestBufferController.mm in Sources */,
 				A59567D222EBCBC9004A3E62 /* KYLGLKController.mm in Sources */,
 				A59567E522EBD01E004A3E62 /* KYLOpenALPlayer.m in Sources */,
 				A59567FE22EBE0B5004A3E62 /* KYLCameraModel.m in Sources */,
